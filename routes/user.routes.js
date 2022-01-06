@@ -2,10 +2,14 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 
 const UserModel = require("../models/User.model");
+
+
+//variaveis exportadas dos arquivos de geração de token, autenticação e administrador. 
 const generateToken = require("../config/jwt.config");
 const isAuthenticated = require("../middlewares/isAuthenticated");
 const attachCurrentUser = require("../middlewares/attachCurrentUser");
 
+// força do salt.
 const salt_rounds = 10;
 
 // Crud (CREATE) - HTTP POST
@@ -27,7 +31,7 @@ router.post("/signup", async (req, res) => {
     ) {
       // O código 400 significa Bad Request
       return res.status(400).json({
-        msg: "Password is required and must have at least 8 characters, uppercase and lowercase letters, numbers and special characters.",
+        msg: "A senha deve conter pelo menos 8 caracteres, letras maiúsculas e minúsculas, números e caraceres especiais.",
       });
     }
 
@@ -42,11 +46,15 @@ router.post("/signup", async (req, res) => {
       ...req.body,
       passwordHash: hashedPassword,
     });
-
+      
     // Responder o usuário recém-criado no banco para o cliente (solicitante). O status 201 significa Created
     return res.status(201).json(result);
   } catch (err) {
     console.error(err);
+
+    if (err.code == 11000) {
+      return res.status(400).json(err.message ? err.message : err);
+    }
     // O status 500 signifca Internal Server Error
     return res.status(500).json({ msg: JSON.stringify(err) });
   }
@@ -67,7 +75,7 @@ router.post("/login", async (req, res) => {
     if (!user) {
       return res
         .status(400)
-        .json({ msg: "This email is not yet registered in our website;" });
+        .json({ msg: "Email ou senha incorretos!" });
     }
 
     // Verificar se a senha do usuário pesquisado bate com a senha recebida pelo formulário
@@ -108,7 +116,7 @@ router.get("/profile", isAuthenticated, attachCurrentUser, (req, res) => {
       // Responder o cliente com os dados do usuário. O status 200 significa OK
       return res.status(200).json(loggedInUser);
     } else {
-      return res.status(404).json({ msg: "User not found." });
+      return res.status(404).json({ msg: "Usuário não encontrado!" });
     }
   } catch (err) {
     console.error(err);
