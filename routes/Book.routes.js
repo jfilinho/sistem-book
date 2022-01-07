@@ -57,7 +57,7 @@ router.get("/detalhe-livro/:id", async (req, res) => {
     res.status(200).json(book);
   } catch (error) {
     console.log(error);
-    res.status(500).json(err);
+    res.status(500).json(error);
   }
 });
 

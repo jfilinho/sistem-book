@@ -14,7 +14,8 @@ const BookSchema = new Schema({
     default:
       "https://www.shortandtweet.com/images/short-and-tweet-default-book-cover.jpg",
   },
-  userId: { type: String },
+
+  userId: { type:String}
 });
 
 const BookModel = model("Book", BookSchema);
