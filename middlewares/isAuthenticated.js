@@ -9,6 +9,8 @@ function extractTokenFromHeaders(req, res) {
   return req.headers.authorization.split(" ")[1];
 }
 
+
+
 module.exports = jwt({
   secret: process.env.TOKEN_SIGN_SECRET,
   userProperty: "user",
