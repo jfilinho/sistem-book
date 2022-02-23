@@ -25,4 +25,4 @@ Este site foi feito para a prática de desenvolvimento FullStack, lecionado pelo
 ## Redes Sociais
 
 
-[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/jfilinho(https://github.com/jfilinho))](https://github.com/jfilinho) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=[https://www.linkedin.com/in/jo%C3%A3o-filho-souza-silva-734773165/](https://www.linkedin.com/in/jo%C3%A3o-filho-souza-silva-734773165/))](https://www.linkedin.com/in/jo%C3%A3o-filho-souza-silva-734773165/)
+[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/jfilinho(https://github.com/jfilinho))](https://github.com/jfilinho) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=[https://www.linkedin.com/in/jo%C3%A3o-filho-souza-wd-fullstack/](https://www.linkedin.com/in/jo%C3%A3o-filho-souza-wd-fullstack))](https://www.linkedin.com/in/jo%C3%A3o-filho-souza-wd-fullstack/)
