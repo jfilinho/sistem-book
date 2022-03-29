@@ -18,7 +18,10 @@ const uploader = require("../config/cloudinary.config");
 //Cadastar um  novo livro.
 
 //Só gera cadastro se estiver logado
-router.post("/cadastrar-livro", isAuthenticated, attachCurrentUser,
+router.post(
+  "/cadastrar-livro",
+  isAuthenticated,
+  attachCurrentUser,
   async (req, res) => {
     try {
       //Inserir no banco de dados
