@@ -14,6 +14,7 @@ const BookModel = require("../models/Book.model");
 const isAuthenticated = require("../middlewares/isAuthenticated");
 const attachCurrentUser = require("../middlewares/attachCurrentUser");
 const uploader = require("../config/cloudinary.config");
+const { populate } = require("../models/User.model");
 
 //Cadastar um  novo livro.
 
